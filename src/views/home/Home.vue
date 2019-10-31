@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    <FrontPage/>
+  <div v-if="loginSuccessful === true" class="home">
+      <FrontPage/>
+  </div>
+  <div v-else>
+      <LoginPage/>
   </div>
 </template>
 

@@ -6,6 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+      // loggingIn: false,
+      // loginError: null,
+      loginSuccessful: false,
+
       recieved_data: "None",
       param_state: "test",
   },
