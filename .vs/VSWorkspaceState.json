@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\front_page",
+    "\\src\\components\\login_page",
+    "\\src\\store",
+    "\\src\\views",
+    "\\src\\views\\home"
+  ],
+  "SelectedNode": "\\src\\components\\login_page\\LoginPage.js",
+  "PreviewInSolutionExplorer": false
+}
