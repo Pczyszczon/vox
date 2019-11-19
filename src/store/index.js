@@ -34,13 +34,13 @@ export default new Vuex.Store({
 				params: {
 					param_for_api: this.state.param_state
 				}
-			}).then(resData => {commit('MUTATION_NAME', resData.data)})
+			}).then(resData => {commit('MUTATION_NAME', resData.data
       },
       */
       doLogin({ commit }, loginData) {
           commit('loginStart');
 
-          axios.post('https://reqres.in/api/login', {
+          axios.get('http://issp-slack.herokuapp.com/Users/User?login=' + loginData.login + '&password='+ loginData.password , {
               ...loginData
           })
               .then(() => {

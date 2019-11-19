@@ -10,6 +10,6 @@
     "\\src\\views",
     "\\src\\views\\home"
   ],
-  "SelectedNode": "\\src\\components\\login_page\\LoginPage.js",
+  "SelectedNode": "\\src\\store\\index.js",
   "PreviewInSolutionExplorer": false
 }

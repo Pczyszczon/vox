@@ -4,7 +4,7 @@ export default {
     name: 'LoginPage',
         data() {
             return {
-                email: '',
+                login: '',
                 password: ''
             }
         },
@@ -21,7 +21,7 @@ export default {
             ]),
             loginSubmit() {
                 this.doLogin({
-                    email: this.email,
+                    login: this.login,
                     password: this.password
                 })
             }

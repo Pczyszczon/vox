@@ -6,7 +6,7 @@
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>
         <form @submit.prevent="loginSubmit">
-            <input type="email" placeholder="E-Mail" v-model="email">
+            <input type="text" placeholder="Login" v-model="login">
             <input type="password" placeholder="Password" v-model="password">
             <button type="submit">Login</button>
         </form>
