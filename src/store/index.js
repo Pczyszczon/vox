@@ -4,6 +4,11 @@ import axios from "axios"
 
 Vue.use(Vuex)
 
+export const backendAdress = 'https://reqres.in/api';
+export const correctBackendAdress = 'http://issp-slack.herokuapp.com/';
+export const users = `${correctBackendAdress}/Users`
+export const login = `${backendAdress}/login`;
+export const schedule = `${backendAdress}/schedule`;
 
 
 export default new Vuex.Store({
