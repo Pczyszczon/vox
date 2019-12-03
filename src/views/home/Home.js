@@ -4,7 +4,7 @@ import LoginPage from '@/components/login_page/LoginPage.vue'
 import { mapState } from 'vuex';
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     FrontPage,
     LoginPage

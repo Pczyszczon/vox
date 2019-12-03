@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div v-if="loggingIn" class="container-loading">
-            <img height ="150px" width="80px"src="/loading.gif" alt="Loading Icon">
+            <img height ="150px" width="80px" src="/loading.gif" alt="Loading Icon">
         </div>
         <p v-if="loginError">{{ loginError }}</p>
         <p v-if="loginSuccessful">Login Successful</p>

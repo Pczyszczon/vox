@@ -1,8 +1,12 @@
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
+import UserData from '@/components/user_data/UserData.vue'
 
 export default {
-    components: { VueCal },
+    components: { 
+      VueCal, 
+      UserData 
+    },
     data: () => ({
         events: [
             {
@@ -24,5 +28,5 @@ export default {
               class: 'sport'
             }
           ]
-    })
+    }),
   }

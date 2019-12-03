@@ -17,13 +17,20 @@ export default new Vuex.Store({
       loginError: null,
       loginSuccessful: false,
 
+      current_user_login: "None",
+      current_user_password: "None",
+
       recieved_data: "None",
       param_state: "test",
   },
   mutations: {
-      MUTATION_NAME(state, data){
+      SET_USER_DATA(state, data){
           state.recieved_data = data
       },
+      SET_USER_CREDENTIALS(state, loginData){
+        state.current_user_login = loginData.login;
+        state.current_user_password = loginData.password;
+    },
 
       loginStart: state => state.loggingIn = true,
       loginStop: (state, errorMessage) => {
@@ -32,19 +39,11 @@ export default new Vuex.Store({
           state.loginSuccessful = !errorMessage;
       }
   },
-  // przykładowa akcja do zapytania z API
+
   actions: {
-      /*action_name_from_store({commit}){
-			axios.get(`http://api.brewerydb.com/v2/beers/?key=f373b8ccc44c9ca5aec073ddfdcdffe0`, {
-				params: {
-					param_for_api: this.state.param_state
-				}
-			}).then(resData => {commit('MUTATION_NAME', resData.data
-      },
-      */
       doLogin({ commit }, loginData) {
           commit('loginStart');
-
+          commit('SET_USER_CREDENTIALS', loginData);
           axios.get('http://issp-slack.herokuapp.com/Users/User?login=' + loginData.login + '&password='+ loginData.password , {
               ...loginData
           })
@@ -53,10 +52,13 @@ export default new Vuex.Store({
               })
               .catch(error => {
                   commit('loginStop', error.response.data.error)
-              })
+              });
+              axios.get(
+                'http://issp-slack.herokuapp.com/Users/User?login=' + this.state.current_user_login + '&password=' + this.state.current_user_password)
+            .then(resData => {commit('SET_USER_DATA', resData)})
       }
   },
   getters: {
-      getter_name_from_store: state => state.recieved_data,
+      get_user_data: state => state.recieved_data,
    }
 })

@@ -6,6 +6,9 @@
     :time-step="30" 
     :events="events">
     </vue-cal>
+    <div>
+      <UserData/>
+    </div>
   </div>
 </template>
 
