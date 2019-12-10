@@ -8,6 +8,7 @@
     </vue-cal>
     <div>
       <UserData/>
+      <UserModal/>
     </div>
   </div>
 </template>

@@ -1,11 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\components",
     "\\src\\components\\front_page",
     "\\src\\components\\login_page",
+    "\\src\\components\\user_data",
+    "\\src\\components\\user_data\\user_data_modal",
     "\\src\\store",
     "\\src\\views",
     "\\src\\views\\home"

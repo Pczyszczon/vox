@@ -1,11 +1,13 @@
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/vuecal.css'
 import UserData from '@/components/user_data/UserData.vue'
+import UserModal from '@/components/user_data/user_data_modal/UserModal.vue'
 
 export default {
     components: { 
       VueCal, 
-      UserData 
+      UserData,
+      UserModal
     },
     data: () => ({
         events: [
