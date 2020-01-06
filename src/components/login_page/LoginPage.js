@@ -4,10 +4,12 @@ export default {
     name: 'LoginPage',
         data() {
             return {
-                login: '',
-                password: ''
-            }
-        },
+              login: {
+                user: "",
+                password: ""
+              }
+            };
+          },
         computed: {
             ...mapState([
                 'loggingIn',
@@ -15,16 +17,16 @@ export default {
                 'loginSuccessful'
             ])
         },
-        methods: {
-            ...mapActions([
-                'doLogin'
-            ]),
-            loginSubmit() {
+        methods: {            
+          ...mapActions([
+          'doLogin'
+      ]),
+            auth() {
                 this.doLogin({
-                    login: this.login,
-                    password: this.password
-                })
-            }
+                    login: this.login.user,
+                    password: this.login.password,                    
+                })                
+              }
         }
     }
 
