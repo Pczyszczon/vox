@@ -44,7 +44,7 @@ export default new Vuex.Store({
       doLogin({ commit }, loginData) {
           commit('loginStart');
           commit('SET_USER_CREDENTIALS', loginData);
-          axios.get('http://issp-slack.herokuapp.com/Users/User?login=' + loginData.login + '&password='+ loginData.password , {
+          axios.get('http://issp-slack.herokuapp.com/Users/?login=' + loginData.login + '&password='+ loginData.password , {
               ...loginData
           })
               .then(() => {
@@ -54,7 +54,7 @@ export default new Vuex.Store({
                   commit('loginStop', error.response.data.error)
               });
               axios.get(
-                'http://issp-slack.herokuapp.com/Users/User?login=' + this.state.current_user_login + '&password=' + this.state.current_user_password)
+                'http://issp-slack.herokuapp.com/Users/?login=' + this.state.current_user_login + '&password=' + this.state.current_user_password)
             .then(resData => {commit('SET_USER_DATA', resData)})
       }
   },
