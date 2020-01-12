@@ -1,14 +1,13 @@
 <template>
   <div class="front_page">
-    <vue-cal selected-date="2019-11-12"
+    <!-- <vue-cal selected-date="2019-11-12"
     :time-from="8 * 60" 
     :time-to="19 * 60" 
     :time-step="30" 
     :events="events">
-    </vue-cal>
-    <div>
-      <UserData/>
-    </div>
+    </vue-cal> -->
+      <!-- <UserData/> -->
+      <Subject/>
   </div>
 </template>
 
