@@ -28,7 +28,7 @@ export default new Vuex.Store({
   },
   mutations: {
       SET_USER_DATA(state, data){
-          state.recieved_data = data;
+          state.recieved_data = data.data;
           state.courses = data.data.courses;
           state.data_loaded = true
       },
