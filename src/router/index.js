@@ -1,8 +1,11 @@
 import Vue from 'vue'
+import VeeValidate from "vee-validate";
 import VueRouter from 'vue-router'
 import Home from '../views/home/Home.vue'
 
+
 Vue.use(VueRouter)
+Vue.use(VeeValidate)
 
 const routes = [
   {

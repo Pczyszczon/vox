@@ -11,7 +11,9 @@
             </div>
   </div>
   <div v-else>
-      <LoginPage/>
+      <RegisterPage/>
+
+
   </div>
 </template>
 
