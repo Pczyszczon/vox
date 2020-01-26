@@ -19,23 +19,30 @@ export default {
     data: () => ({
         events: [
             {
-              start: '2019-11-12 14:00',
-              end: '2019-11-12 16:00',
+              start: '2020-01-31 14:00',
+              end: '2020-01-31 16:00',
               title: 'Fizyka Teoretyczna',
-              class: 'leisure'
+              class: 'lecture'
             },
             {
-              start: '2019-11-13 12:00',
-              end: '2019-11-13 14:00',
+              start: '2020-01-31 17:00',
+              end: '2020-01-31 18:00',
+              title: 'Chemia',
+              class: 'lecture'
+            },
+            {
+              start: '2020-01-30 12:00',
+              end: '2020-01-30 14:00',
               title: 'Biologia',
-              class: 'leisure'
+              class: 'lecture'
             },
             {
-              start: '2019-11-14 10:00',
-              end: '2019-11-14 18:00',
+              start: '2020-01-28 10:00',
+              end: '2020-01-28 12:00',
               title: 'WF',
               class: 'sport'
-            }
+            },
+            
           ],
           courses_data: [],
     }),
