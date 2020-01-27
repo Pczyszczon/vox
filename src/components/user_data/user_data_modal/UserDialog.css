@@ -1,14 +1,19 @@
 .md-dialog {
-    width: 500px;
-    background-color: white;
-    margin: 0px auto;
-    padding: 20px;
-    font-size: 14pt;
-    font-family: frutiger;
+  background-color: white;
+  font-family: frutiger;
 }
-.md-dialog-title {
-    margin: 0px auto;
-    padding: 20px;
-    font-weight: bold;
+.md-card-content {
+  padding: 20px;
+  font-size: 14pt;
+  font-family: frutiger;
 }
-
+.md-card {
+  padding: 20px;
+  width: 320px;
+  margin: 2px;
+  display: inline-block;
+  vertical-align: top;
+}
+.md-button-group {
+  display: flex;
+}
