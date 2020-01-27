@@ -1,14 +1,19 @@
 <template>
-  <div class="calendar">
-    <vue-cal selected-date="2020-01-28"
-    :time-from="8 * 60" 
-    :time-to="19 * 60" 
-    :time-step="30" 
-    :events="events"
-    editable-events
-    :time="false"
-    hide-weekends>
-    </vue-cal>
+  <div class="action">
+    <div class="calendar">
+      <vue-cal
+        selected-date="2020-01-28"
+        
+  hide-view-selector
+        :time-from="8 * 60"
+        :time-to="20 * 60"
+        :disable-views="['years', 'year', 'month', 'day']"
+        hide-weekends
+        editable-events
+        :events="events"
+      >
+      </vue-cal>
+    </div>
   </div>
 </template>
 

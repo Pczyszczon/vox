@@ -3,8 +3,19 @@
   border: 1px solid rgb(233, 136, 46);
   color: #fff;
 }
-.vuecal__event.sport {
+.vuecal__event.lab {
   background-color: rgba(255, 102, 102, 0.9);
   border: 1px solid rgb(235, 82, 82);
   color: #fff;
+}
+.vuecal__event.seminar {
+  background-color: rgba(255, 102, 102, 0.9);
+  border: 1px solid rgb(235, 82, 82);
+  color: #fff;
+}
+.action {
+  margin-left: 50vh;
+  margin-right: 50vh;
+  justify-content: center;
+  height: 100vh;
 }
