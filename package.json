@@ -10,12 +10,14 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.1.2",
+    "v-file-upload": "^3.1.7",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
     "vue-cal": "^2.14.0",
     "vue-loading-overlay": "^3.2.0",
     "vue-material": "^1.0.0-beta-11",
     "vue-router": "^3.0.6",
+    "vue-upload-component": "^2.8.20",
     "vuelidate": "^0.7.4",
     "vuex": "^3.0.1"
   },

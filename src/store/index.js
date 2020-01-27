@@ -26,6 +26,7 @@ export default new Vuex.Store({
       param_state: "test",
       courses: [],
       courses_data: [],
+      course_files: []
   },
   mutations: {
       SET_USER_DATA(state, data){
@@ -52,6 +53,9 @@ export default new Vuex.Store({
           state.courses = [];
           state.courses_data = [];
           state.loginSuccessful = false;
+      },
+      LIST_LINKS(state, data){
+          state.course_files = data.data
       }
   },
 
@@ -79,6 +83,12 @@ export default new Vuex.Store({
                   commit('ADD_COURSE', resData)
               });
       },
+      getFilesList({commit}, id){
+        axios.get('http://issp-slack.herokuapp.com/Files/' + id)
+        .then(resData => {
+            commit('LIST_LINKS', resData)
+        });
+      },
       logout({commit}){
           commit('CLEAR_ALL')
       }
@@ -86,6 +96,7 @@ export default new Vuex.Store({
   getters: {
       get_user_data: state => state.recieved_data,
       get_courses: state => state.courses,
-      get_courses_data: state => state.courses_data
+      get_courses_data: state => state.courses_data,
+      get_course_files: state => state.course_files
    }
 })
