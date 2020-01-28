@@ -6,6 +6,7 @@
         hide-view-selector
         :time-from="8 * 60"
         :time-to="20 * 60"
+        hide-title-bar
         :disable-views="['years', 'year', 'month', 'day']"
         hide-weekends
         :events="events"

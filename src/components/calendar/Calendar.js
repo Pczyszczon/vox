@@ -97,6 +97,9 @@ export default {
       }
     ]
   }),
+  created() {
+    this.selectedEvent=0;
+    },
   methods: {
     onEventClick(event, e) {
       this.selectedEvent = event;
