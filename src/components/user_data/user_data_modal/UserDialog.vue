@@ -1,43 +1,40 @@
 ﻿<template>
   <div>
     <md-dialog :md-active.sync="showDialog">
-      <md-content class="md-elevation-1">
-        <md-card>
-          <md-card-header>
-            <md-avatar>
-              <img src="@/assets/SSWJM.svg" alt="People" />
-            </md-avatar>
+      <md-card>
+        <md-card-header>
+          <md-avatar>
+            <img src="@/assets/SSWJM.svg" alt="People" />
+          </md-avatar>
+          <div class="md-title">
+            {{ IsDataAvailable(get_user_data.user.login) }}
+          </div>
+          <div class="md-subhead">
+            {{ IsDataAvailable(get_user_data.user.role) }}
+          </div>
+        </md-card-header>
 
-            <div class="md-title">
-              {{ IsDataAvailable(get_user_data.user.login) }}
-            </div>
-            <div class="md-subhead">
-              {{ IsDataAvailable(get_user_data.user.role) }}
-            </div>
-          </md-card-header>
+        <md-card-content>
+          <div class="md-subhead">
+            Rola: {{ IsDataAvailable(get_user_data.user.role) }}
+          </div>
+          <div class="md-subhead">
+            Wydział: {{ IsDataAvailable(get_user_data.user.faculty) }}
+          </div>
+          <div class="md-subhead">
+            Specjalizacja: {{ IsDataAvailable(get_user_data.user.major) }}
+          </div>
+          <div class="md-subhead">
+            Semestr: {{ IsDataAvailable(get_user_data.user.semester) }}
+          </div>
+        </md-card-content>
 
-          <md-card-content>
-            <div class="md-subhead">
-              Rola: {{ IsDataAvailable(get_user_data.user.role) }}
-            </div>
-            <div class="md-subhead">
-              Wydział: {{ IsDataAvailable(get_user_data.user.faculty) }}
-            </div>
-            <div class="md-subhead">
-              Specjalizacja: {{ IsDataAvailable(get_user_data.user.major) }}
-            </div>
-            <div class="md-subhead">
-              Semestr: {{ IsDataAvailable(get_user_data.user.semester) }}
-            </div>
-          </md-card-content>
-
-          <md-dialog-actions>
-            <md-button class="md-raised md-primary" @click="showDialog = false"
-              >Zamknij</md-button
-            >
-          </md-dialog-actions>
-        </md-card>
-      </md-content>
+        <md-dialog-actions>
+          <md-button class="md-raised md-primary" @click="showDialog = false"
+            >Zamknij</md-button
+          >
+        </md-dialog-actions>
+      </md-card>
     </md-dialog>
 
     <md-button class="md-primary" @click="showDialog = true"
