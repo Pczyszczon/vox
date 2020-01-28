@@ -1,6 +1,6 @@
 <template>
   <div class="front_page">
-      <Calendar/>>
+      <Calendar/>
       <Subject/>
   </div>
 </template>
