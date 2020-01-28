@@ -3,14 +3,13 @@
     <div class="calendar">
       <vue-cal
         selected-date="2020-01-28"
-        
-  hide-view-selector
+        hide-view-selector
         :time-from="8 * 60"
         :time-to="20 * 60"
         :disable-views="['years', 'year', 'month', 'day']"
         hide-weekends
-        editable-events
         :events="events"
+        :on-event-dblclick="onEventClick"
       >
       </vue-cal>
     </div>

@@ -14,6 +14,7 @@ export default {
     ...mapActions(["getCourse"])
   },
   data: () => ({
+    selectedEvent: {},
     events: [
       {
         start:  "2020-01-27 16:00",
@@ -88,6 +89,12 @@ export default {
       }
     ]
   }),
-  mounted: function() {
+  methods: {
+    onEventClick (event, e) {
+      this.selectedEvent = event  
+      console.log("test")
+      // Prevent navigating to narrower view (default vue-cal behavior).
+      e.stopPropagation()
+    }
   }
 };
