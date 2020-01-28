@@ -1,23 +1,23 @@
 .md-dialog {
-    width: 600px;
-    background-color: white;
-    margin: 0px auto;
-    padding: 20px;
-    font-size: 14pt;
-    font-family: frutiger;
+  width: 600px;
+  background-color: white;
+  margin: 0px auto;
+  padding: 20px;
+  font-size: 14pt;
+  font-family: frutiger;
 }
 .md-dialog-title {
-    margin: 0px auto;
-    padding: 20px;
-    font-weight: bold;
+  margin: 0px auto;
+  padding: 20px;
+  font-weight: bold;
 }
-  .course-content {  
-    position: relative;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 0;
-  }
+.course-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+}

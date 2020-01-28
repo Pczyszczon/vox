@@ -1,10 +1,12 @@
 import {mapGetters, mapActions} from "vuex"
 import Uploader from '@/components/uploader/Uploader.vue'
+import EventBus from '@/components/event_bus/Event_bus'
 
 export default {
-      name: 'Subject',
+      name: 'Subject',     
       components: {
-        Uploader
+        Uploader,
+        EventBus
       },
       computed: {
         ...mapGetters(['get_courses_data', 'get_courses', 'get_course_files'])
@@ -13,6 +15,11 @@ export default {
         selected_course: 0,
         showDialog: false
       }),
+      created() {
+        EventBus.$on('selectCourse', (data) => {
+          this.selected_course=data;
+        })
+    },
       methods: {
         ...mapActions(['getFilesList']),
         prev() {

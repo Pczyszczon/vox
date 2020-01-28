@@ -4,8 +4,8 @@
     <h3>
       {{ get_courses_data[this.selected_course].data.course.description }}
     </h3>
-
     <h4>
+      <Calendar :selectedOption="selectedOption"></Calendar>
       Course have started at:
       {{ get_courses_data[this.selected_course].data.course.startDate }} Ends:
       {{ get_courses_data[this.selected_course].data.course.endDate }}
