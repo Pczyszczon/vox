@@ -31,7 +31,7 @@
         </div>
 
         <div class="actions md-layout md-alignment-center-space-between">
-          <md-button class="md-raised md-primary" @click="createAccount"
+          <md-button class="md-raised md-primary" @click="auth"
             >Create Account</md-button
           >
         </div>

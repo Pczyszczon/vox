@@ -15,8 +15,11 @@ export const schedule = `${backendAdress}/schedule`;
 export default new Vuex.Store({
   state: {
       loggingIn: false,
+      registerInProgres: false,
       loginError: null,
+      registerError: null,
       loginSuccessful: false,
+      registerSuccessful: false,
 
       current_user_login: "None",
       current_user_password: "None",
@@ -39,7 +42,11 @@ export default new Vuex.Store({
       SET_USER_CREDENTIALS(state, loginData){
         state.current_user_login = loginData.login;
         state.current_user_password = loginData.password;
-    },
+     },
+     SET_REGISTER_CREDENTIALS(state, registerData){
+        state.current_user_login = registerData.login;
+        state.current_user_password = registerData.password;
+     },
     ADD_COURSE(state, course){
         state.courses_data.push(course)
     },
@@ -51,6 +58,12 @@ export default new Vuex.Store({
           state.loggingIn = false;
           state.loginError = errorMessage;
           state.loginSuccessful = !errorMessage;
+      },
+      registerStart: state => state.registerInProgres = true,
+      registerStop: (state, errorMessage) => {
+          state.registerInProgres = false;
+          state.registerError = errorMessage;
+          state.registerSuccessful = !errorMessage;
       },
       CLEAR_ALL(state){
           state.data_loaded = false;
@@ -82,6 +95,19 @@ export default new Vuex.Store({
                 'http://issp-slack.herokuapp.com/Users/?login=' + this.state.current_user_login + '&password=' + this.state.current_user_password)
             .then(resData => {commit('SET_USER_DATA', resData)})
       },
+      doRegister({ commit }, registerData) {
+        commit('registerStart');
+        commit('SET_REGISTER_CREDENTIALS', registerData);
+        axios.post('http://issp-slack.herokuapp.com/Users/?login=' + registerData.login + '&password='+ registerData.password + '&faculty=' + registerData.faculty + '&major=' + registerData.major + '&semester='+ registerData.semester , {
+            ...registerData
+        })
+            .then(() => {
+                commit('registerStop', null)
+            })
+            .catch(error => {
+                commit('registerStop', error.response.data.error)
+            });
+    },
 
       getCourse({commit}, id){
         axios.get('http://issp-slack.herokuapp.com/Courses/' + id)

@@ -1,4 +1,5 @@
 import axios from "axios"
+import { mapState, mapActions } from 'vuex';
 
 export default {
     name: "register",
@@ -14,13 +15,34 @@ export default {
         }
       };
     },
+    computed: {
+      ...mapState([
+          'registerInProgress',
+          'registerError',
+          'registerSuccessful',
+          'loadingData'
+      ])
+  },
     methods: {
-      createAccount() {
-        this.loading = true;
-        setTimeout(() => {
-          this.loading = false;
-          this.$router.push("/");
-        }, 5000);
-      }
+      ...mapActions(['doRegister']),
+      auth() {
+        this.doRegister({
+            login: this.user.login,
+            password: this.user.password,           
+            faculty: this.user.faculty,      
+            major: this.user.major,      
+            semester: this.user.semester                           
+        });
+        this.submit()
+      },
+    submit() {
+      let loader = this.$loading.show({
+          container: this.fullPage,
+          loader: 'bars',
+      });
+      setTimeout(() => {
+        loader.hide()
+      },3500)
+    }  
     }
   };

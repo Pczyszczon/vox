@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VeeValidate from "vee-validate";
 import VueRouter from 'vue-router'
 import Home from '../views/home/Home.vue'
+import RegisterPage from '../components/register_page/RegisterPage.vue'
 
 
 Vue.use(VueRouter)
@@ -16,9 +17,13 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-
     component: () => import('../views/About.vue')
-  }
+  },
+  {
+    path: '/',
+    name: 'register',
+    component: RegisterPage
+  },
 ]
 
 const router = new VueRouter({
