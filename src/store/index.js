@@ -26,12 +26,14 @@ export default new Vuex.Store({
       param_state: "test",
       courses: [],
       courses_data: [],
-      course_files: []
+      course_files: [],
+      attendance_data: [],
   },
   mutations: {
       SET_USER_DATA(state, data){
           state.recieved_data = data.data;
           state.courses = data.data.courses;
+          //state.attendance = data.data.attendance;
           state.data_loaded = true
       },
       SET_USER_CREDENTIALS(state, loginData){
@@ -40,6 +42,9 @@ export default new Vuex.Store({
     },
     ADD_COURSE(state, course){
         state.courses_data.push(course)
+    },
+    ADD_ATTENDANCE(state, attendance) {
+        state.attendance_data.push(attendance)
     },
       loginStart: state => state.loggingIn = true,
       loginStop: (state, errorMessage) => {
@@ -52,6 +57,7 @@ export default new Vuex.Store({
           state.recieved_data = "None";
           state.courses = [];
           state.courses_data = [];
+          state.attendance_data = [];
           state.loginSuccessful = false;
       },
       LIST_LINKS(state, data){
@@ -82,7 +88,12 @@ export default new Vuex.Store({
               .then(resData => {
                   commit('ADD_COURSE', resData)
               });
+          axios.get('http://issp-slack.herokuapp.com//Attendance/Dates?courseId=' + id)
+              .then(resData => {
+                  commit('ADD_ATTENDANCE', resData)
+              })
       },
+
       getFilesList({commit}, id){
         axios.get('http://issp-slack.herokuapp.com/Files/' + id)
         .then(resData => {
@@ -97,6 +108,7 @@ export default new Vuex.Store({
       get_user_data: state => state.recieved_data,
       get_courses: state => state.courses,
       get_courses_data: state => state.courses_data,
-      get_course_files: state => state.course_files
+      get_course_files: state => state.course_files,
+      get_attendance: state => state.attendance_data,
    }
 })
